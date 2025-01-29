@@ -1,0 +1,554 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.alert{
+  text-align: center;
+  background-color: #e3d872;
+  font-size: 15px;
+}
+
+
+
+ header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+/*            background-color: #f8f9fa;*/
+/*            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+        }
+
+        .logo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .logo img {
+            max-height: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            border-radius: 20%
+        }
+        
+        .search-bar input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4% 0 0 4%;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 8px 12px;
+            border: none;
+            background-color:  black;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color:  #e3d872;
+
+        }
+
+        .icons {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .icons a {
+            color: #333;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .icons a:hover {
+            color:  #e3d872;
+        }
+
+.nav {
+
+  padding: 10px 20px;
+
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers the navigation */
+  align-items: center;
+}
+
+.navbar-list {
+  list-style: none; /* Removes default bullet points */
+  display: flex;
+  gap: 20px; /* Adds spacing between the items */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  text-decoration: none; /* Removes underline from links */
+  font-family: 'Montserrat', sans-serif; /* Uses Montserrat as per your preference */
+  font-size: 16px;
+  color: #333; /* Dark text color */
+  position: relative; /* Needed for the after pseudo-element */
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #e3d872; /* Changes color on hover */
+}
+
+.navbar-link.has-after::after {
+  content: ''; /* Empty content for the underline effect */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color:  #e3d872; /* Blue underline */
+  transition: width 0.3s ease;
+}
+
+.navbar-link.has-after:hover::after {
+  width: 100%; /* Expands the underline on hover */
+}
+
+
+
+
+/* General Section Styling */
+.section.hero {
+  position: relative;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Scrollbar Styling */
+.has-scrollbar {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f9f9f9;
+  padding: 10px 0;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+}
+
+.scrollbar-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin-right: 20px;
+}
+
+/* Hero Card Styling */
+.hero-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.card-content {
+  text-align: left;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.hero-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e74c3c;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+
+
+/*shop*/
+
+
+ 
+
+
+.color{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-box {
+            width: 250px;
+            height: 450px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s;
+        }
+
+        .product-box:hover {
+            transform: scale(1.05);
+        }
+
+
+        .product-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .product-box img:hover{
+   -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+}
+
+        /* Sale text style */
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .product-box h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .product-box p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .product-box .price {
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .product-box .icon {
+            font-size: 30px;
+            color: #ff6347;
+            margin-bottom: 10px;
+        }
+
+        .star-rating {
+            color: gold;
+            font-size: 18px;
+        }
+
+   
+
+
+   /* About Us Section Styling */
+#about-us {
+  background-color: #f9f9f9; /* Light background for a clean look */
+  padding: 50px 0;
+}
+
+#about-us .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#about-us .col-lg-6 {
+  flex: 1;
+}
+
+#about-us img {
+  border-radius: 10px; /* Rounded corners for the image */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 70%;
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+
+#about-us img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+#about-us .text-section {
+  padding-left: 30px; /* Space between image and text */
+}
+
+#about-us .title h2 {
+  font-size: 2.5rem;
+  color: #333; /* Neutral color for heading */
+  font-weight: 700;
+  position: relative;
+}
+
+#about-us .title h2::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: #e3d872 ; /* Accent color resembling glowing skin */
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+#about-us p {
+  font-size: 1.1rem;
+  color: #555; /* Soft text color for readability */
+  line-height: 1.8;
+}
+
+#about-us p.lead {
+  font-size: 1.3rem;
+  color: #222; /* Slightly darker text for emphasis */
+  font-weight: 600;
+}
+
+
+
+
+
+
+/*<--icon-->*/
+
+/* Feature Section Styling */
+.section.feature {
+  background-color: #f9f9f9; /* Light background for a clean look */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.section.feature .section-title {
+  font-size: 2.5rem;
+  color: #333; /* Neutral color for heading */
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flex-item {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* White background for cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.card-icon {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555; /* Soft text color for readability */
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section.feature .section-title {
+    font-size: 2rem;
+  }
+
+  .flex-list {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .flex-item {
+    max-width: 100%;
+  }
+
+  .feature-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    flex: 0 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    flex: 0 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .icons {
+    flex: 0 1 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-link {
+    font-size: 14px; /* Slightly smaller text on mobile */
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-box {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .hero-card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .sale-badge {
+    font-size: 12px;
+    top: 5px;
+    right: 5px;
+  }
+}
